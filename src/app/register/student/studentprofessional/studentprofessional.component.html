@@ -1,0 +1,84 @@
+<div class="section text-center">
+
+   <h1>Professional Details</h1>
+  <h4>Create your account in easy steps with less<br>information.</h4>
+
+
+</div>
+
+
+
+<form class="example-form" [formGroup]="studentProfessionalForm" name="studentProfessionalForm" (ngSubmit)="onSubmit(studentProfessionalForm)">
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="College Name" formControlName="collegeNameFormControl" [formControl]="collegeNameFormControl">
+
+      <mat-error *ngIf="studentProfessionalForm.get('collegeNameFormControl').touched && studentProfessionalForm.get('collegeNameFormControl').invalid">
+
+
+        <mat-error *ngIf="collegeNameFormControl.hasError('required')">
+           College Name is <strong>required</strong>
+        </mat-error>
+
+
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Address" formControlName="addressFormControl" [formControl]="addressFormControl">
+
+      <mat-error *ngIf="studentProfessionalForm.get('addressFormControl').touched && studentProfessionalForm.get('addressFormControl').invalid">
+
+
+        <mat-error *ngIf="addressFormControl.hasError('required')">
+          Address is <strong>required</strong>
+        </mat-error>
+
+
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="User Name or Email" formControlName="emailFormControl" [formControl]="emailFormControl">
+
+      <mat-error *ngIf="studentProfessionalForm.get('emailFormControl').touched && studentProfessionalForm.get('emailFormControl').invalid">
+
+       
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email or User Id is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('minLength')">
+          Minimum 12 charcters required
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('maxLength')">
+          Maximum 30 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+  
+ <div class="form-group">
+    <button routerLink="./dashboard" mat-button type="submit"  class="btn btn-lg btn-primary btn-block btn-signin" [disabled]="studentProfessionalForm.invalid" routerLink="./dashboard">Register</button>
+  </div>
+</form>
+
+
+ <div class="text-center">
+    <img src="./assets/image/student.png" class="img-responsive">
+  </div>

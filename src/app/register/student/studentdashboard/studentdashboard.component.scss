@@ -1,0 +1,49 @@
+.container{
+    height:125px;
+   
+    width:100%;
+    background-color:#2D8CFF;
+}
+.nav-pills {
+    text-align: center;
+    border: 1px solid #72808E;
+    border-radius: 22px;
+    width:30%;
+    height: 44px;
+    word-spacing: 5px;
+    font-size: 14px;
+    margin-left:59px;
+    margin-top:30px;
+    overflow: hidden;
+    
+    li {
+      width: 49%;
+      display: inline-block;
+      text-align: center;
+      a {
+         
+        text-align: center;
+        display: inline-block;
+        border-radius: 30px;
+        // margin: auto;
+        // padding: auto;
+        // padding-top: 7px;
+        padding-right: 15px;
+        width: 110%;
+        height: 42px;
+        font-size: 20px;
+        // overflow: hidden;
+      }
+     
+    }
+  
+  }
+  .nav-pills>li.active{
+    a{
+    color:blue;
+    background-color: white;
+    }
+  }
+  a{
+    color: white;
+  }

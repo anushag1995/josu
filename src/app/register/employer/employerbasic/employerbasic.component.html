@@ -1,0 +1,118 @@
+<div class="section text-center">
+
+  <h1>Employer Registration</h1>
+  <h4>Create your account in easy steps with less<br>information.</h4>
+
+
+</div>
+
+
+
+<form class="example-form" [formGroup]="employerForm" name="employerForm" (ngSubmit)="onSubmit(employerForm)">
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput placeholder="First Name" formControlName="firstNameFormControl" [formControl]="firstNameFormControl" required>
+
+      <mat-error *ngIf="employerForm.get('firstNameFormControl').touched && employerForm.get('firstNameFormControl').invalid">
+
+
+        <mat-error *ngIf="firstNameFormControl.hasError('required')">
+          First Name is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="firstNameFormControl.hasError('minLength')">
+          Minimum 3 charcters required
+        </mat-error>
+        <mat-error *ngIf="firstNameFormControl.hasError('maxLength')">
+          Maximum 20 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput placeholder="Last Name" formControlName="lastNameFormControl" [formControl]="lastNameFormControl" required>
+
+      <mat-error *ngIf="employerForm.get('lastNameFormControl').touched && employerForm.get('lastNameFormControl').invalid">
+
+        <mat-error *ngIf="lastNameFormControl.hasError('minLength')">
+          Minimum 3 charcters required
+        </mat-error>
+        <mat-error *ngIf="lastNameFormControl.hasError('maxLength')">
+          Maximum 20 charcters required
+        </mat-error>
+        <mat-error *ngIf="lastNameFormControl.hasError('required')">
+          Last Name is <strong>required</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="User Id" formControlName="userIdFormControl" [formControl]="userIdFormControl" required>
+
+      <mat-error *ngIf="employerForm.get('userIdFormControl').touched && employerForm.get('userIdFormControl').invalid">
+
+
+        <mat-error *ngIf="userIdFormControl.hasError('required')">
+          User Id is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="userIdFormControl.hasError('minLength')">
+          Minimum 8 charcters required
+        </mat-error>
+        <mat-error *ngIf="userIdFormControl.hasError('maxLength')">
+          Maximum 20 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="User Name or Email" formControlName="emailFormControl" [formControl]="emailFormControl" required>
+
+      <mat-error *ngIf="employerForm.get('emailFormControl').touched && employerForm.get('emailFormControl').invalid">
+
+        <mat-error *ngIf="emailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email or User Id is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('minLength')">
+          Minimum 12 charcters required
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('maxLength')">
+          Maximum 30 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+  <div class="form-group">
+    <!-- <a routerLink="./employerPersonal"><button type="submit" [disabled]="employerForm.invalid">></button></a> -->
+    <button  routerLink="./employerPersonal" mat-fab color="primary" [disabled]="employerForm.invalid"><i class="material-icons">keyboard_arrow_right</i></button>
+  </div>
+</form>
+
+ <div class="text-center">
+    <img src="./assets/image/employer.png" class="img-responsive">
+  </div>
+
+<router-outlet></router-outlet>
+ 
+

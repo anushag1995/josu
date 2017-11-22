@@ -1,0 +1,149 @@
+<div class="section text-center">
+
+  <h1>Personal Details</h1>
+  <h4>Create your account in easy steps with less<br>information.</h4>
+
+
+</div>
+
+
+
+<form class="example-form" [formGroup]="studentPersonalForm" name="studentPersonalForm" (ngSubmit)="onSubmit(studentPersonalForm)">
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput type="number" placeholder="Contact Number" formControlName="contactNumberFormControl" [formControl]="contactNumberFormControl">
+
+      <mat-error *ngIf="studentPersonalForm.get('contactNumberFormControl').touched && studentPersonalForm.get('contactNumberFormControl').invalid">
+
+
+        <mat-error *ngIf="contactNumberFormControl.hasError('required')">
+          contact number <strong>required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="contactNumberFormControl.hasError('maxLength')">
+          Maximum 14 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput type="number" placeholder="Date Of Birth" formControlName="dobFormControl" [formControl]="dobFormControl">
+
+      <mat-error *ngIf="studentPersonalForm.get('dobFormControl').touched && studentPersonalForm.get('dobFormControl').invalid">
+
+        <mat-error *ngIf="dobFormControl.hasError('required')">
+          Date Of Birth is <strong>required</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Address" formControlName="addressFormControl" [formControl]="addressFormControl">
+
+      <mat-error *ngIf="studentPersonalForm.get('addressFormControl').touched && studentPersonalForm.get('addressFormControl').invalid">
+
+
+        <mat-error *ngIf="addressFormControl.hasError('required')">
+          Address is <strong>required</strong>
+        </mat-error>
+
+
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput type="number" placeholder="Zip Code" formControlName="zipCodeFormControl" [formControl]="zipCodeFormControl">
+
+      <mat-error *ngIf="studentPersonalForm.get('zipCodeFormControl').touched && studentPersonalForm.get('zipCodeFormControl').invalid">
+
+
+        <mat-error *ngIf="zipCodeFormControl.hasError('required')">
+          Zip Code <strong>required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="zipCodeFormControl.hasError('maxLength')">
+          Maximum 6 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput placeholder="City" formControlName="cityFormControl" [formControl]="cityFormControl">
+
+      <mat-error *ngIf="studentPersonalForm.get('cityFormControl').touched && studentPersonalForm.get('cityFormControl').invalid">
+
+        <mat-error *ngIf="cityFormControl.hasError('required')">
+          Enter Your <strong>City</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput placeholder="State" formControlName="stateFormControl" [formControl]="stateFormControl">
+
+      <mat-error *ngIf="studentPersonalForm.get('stateFormControl').touched && studentPersonalForm.get('stateFormControl').invalid">
+
+        <mat-error *ngIf="stateFormControl.hasError('required')">
+          Enter Your <strong>State</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput placeholder="Country" formControlName="countryFormControl" [formControl]="countryFormControl">
+
+      <mat-error *ngIf="studentPersonalForm.get('countryFormControl').touched && studentPersonalForm.get('countryFormControl').invalid">
+
+        <mat-error *ngIf="countryFormControl.hasError('required')">
+          Enter Your <strong>Country</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+     <div class="form-group">
+    <!-- <a routerLink="./studentProfessional"><button type="submit" [disabled]="studentPersonalForm.invalid">></button></a> -->
+    <button  routerLink="./studentProfessional" mat-fab color="primary" [disabled]="studentPersonalForm.invalid"><i class="material-icons">keyboard_arrow_right</i></button>
+  </div>
+
+</form>
+
+ <div class="text-center">
+    <img src="./assets/image/student.png" class="img-responsive">
+  </div>

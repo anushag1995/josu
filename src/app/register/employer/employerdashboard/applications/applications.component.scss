@@ -1,0 +1,142 @@
+/* Structure */
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px; // overflow: hidden;
+    // width: 80%;
+    font-size: 20px;
+    margin: right;
+    z-index:99;
+    position:inherit;
+  }
+  
+  .example-header {
+    min-height: 56px;
+    max-height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 8px 24px 0;
+    font-size: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    flex-grow: 1;
+    margin-top: 8px;
+  }
+  
+   ::ng-deep .mat-header-row {
+    background-color: lightgray !important;
+    min-height: 70px !important;
+    font-size: 20px !important;
+  }
+  
+  .example-no-results {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    font-size: 12px;
+    font-style: italic;
+  }
+  
+  
+  /** Selection styles */
+  
+  .example-selection-header {
+    font-size: 18px;
+  }
+  
+  .mat-column-select {
+    max-width: 54px;
+  }
+  
+  .mat-row:hover,
+  .example-selected-row {
+    background: #f5f5f5;
+  }
+  
+  .mat-row:active,
+  .mat-row.example-selected-row {
+    background: #eaeaea;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+   .button-container {
+    width: 129px;
+    height: 38px;
+    border-radius: 4px;
+    text-align: center;
+    color: #ffffff !important;
+    padding-top: 9px;
+    background-color: #30a1da !important;
+    margin-top: 6px;
+  }
+  
+  .tabs {
+    padding-left: 35px;
+  }
+  
+  .section {
+    background-color: #30a1da !important;
+    padding: 30px;
+    .container {
+      margin: 0px;
+      padding: 0px;
+      .card {
+        color: 2px solid white;
+        .nav-pills {
+          text-align: center;
+          border: 1px solid #72808E;
+          border-radius: 22px;
+          width: 43%;
+          height: 44px;
+          word-spacing: 5px;
+          font-size: 14px;
+          overflow: hidden;
+          border: 1px solid white;
+          li {
+            width: 33%;
+            display: inline-block;
+            text-align: center;
+            a {
+              text-align: center;
+              display: inline-block;
+              border-radius: 30px;
+              margin: auto;
+              padding: auto;
+              // color: white;
+              width: 110%;
+              height: 42px;
+              font-size: 16px; // overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav-pills>li.active{
+    a{
+    color:blue;
+    background-color: white;
+    }
+  }
+  a{
+    color: white;
+  }
+  .button-container{
+    width: 103px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    color: #ffffff !important;
+    padding-top: 9px;
+    background-color: #30a1da !important;
+    margin-top: -8px;
+  }
+  

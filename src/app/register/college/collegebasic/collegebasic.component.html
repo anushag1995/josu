@@ -1,0 +1,114 @@
+<div class="section text-center">
+
+   <h1>College Registration</h1>
+  <h4>Create your account in easy steps with less<br>information.</h4>
+
+
+</div>
+
+
+
+<form class="example-form" [formGroup]="collegeForm" name="collegeForm" (ngSubmit)="onSubmit(collegeForm)">
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput placeholder="First Name" formControlName="firstNameFormControl" [formControl]="firstNameFormControl">
+
+      <mat-error *ngIf="collegeForm.get('firstNameFormControl').touched && collegeForm.get('firstNameFormControl').invalid">
+
+
+        <mat-error *ngIf="firstNameFormControl.hasError('required')">
+          First Name is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="firstNameFormControl.hasError('minLength')">
+          Minimum 8 charcters required
+        </mat-error>
+        <mat-error *ngIf="firstNameFormControl.hasError('maxLength')">
+          Maximum 20 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="form-group" >
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput placeholder="Last Name" formControlName="lastNameFormControl" [formControl]="lastNameFormControl">
+
+      <mat-error *ngIf="collegeForm.get('lastNameFormControl').touched && collegeForm.get('lastNameFormControl').invalid">
+
+        <mat-error *ngIf="lastNameFormControl.hasError('minLength')">
+          Minimum 8 charcters required
+        </mat-error>
+        <mat-error *ngIf="lastNameFormControl.hasError('maxLength')">
+          Maximum 20 charcters required
+        </mat-error>
+        <mat-error *ngIf="lastNameFormControl.hasError('required')">
+          Last Name is <strong>required</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="User Id" formControlName="userIdFormControl" [formControl]="userIdFormControl">
+
+      <mat-error *ngIf="collegeForm.get('userIdFormControl').touched && collegeForm.get('userIdFormControl').invalid">
+
+
+        <mat-error *ngIf="userIdFormControl.hasError('required')">
+          User Id is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="userIdFormControl.hasError('minLength')">
+          Minimum 8 charcters required
+        </mat-error>
+        <mat-error *ngIf="userIdFormControl.hasError('maxLength')">
+          Maximum 20 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email Id" formControlName="emailFormControl" [formControl]="emailFormControl">
+
+      <mat-error *ngIf="collegeForm.get('emailFormControl').touched && collegeForm.get('emailFormControl').invalid">
+
+        <mat-error *ngIf="emailFormControl.hasError('pattern')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email Id<strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('minLength')">
+          Minimum 12 charcters required
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('maxLength')">
+          Maximum 30 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+   <div class="form-group">
+    <!-- <a routerLink="./collegeProfessional"><button type="submit" [disabled]="collegeForm.invalid">></button></a> -->
+   <button routerLink="./collegeProfessional" mat-fab color="primary" [disabled]="collegeForm.invalid"><i class="material-icons">keyboard_arrow_right</i></button>
+  </div>
+
+</form>
+ <div class="text-center">
+    <img src="./assets/image/college.png" class="img-responsive">
+  </div>

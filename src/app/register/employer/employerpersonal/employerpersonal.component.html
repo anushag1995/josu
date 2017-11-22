@@ -1,0 +1,150 @@
+<div class="section text-center">
+
+  <h1>Address Details</h1>
+  <h4>Create your account in easy steps with less<br>information.</h4>
+
+
+</div>
+
+
+
+<form class="example-form" [formGroup]="addressForm" name="addressForm" (ngSubmit)="onSubmit(addressForm)">
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput type="number" placeholder="Contact Number" formControlName="contactNumberFormControl" [formControl]="contactNumberFormControl">
+
+      <mat-error *ngIf="addressForm.get('contactNumberFormControl').touched && addressForm.get('contactNumberFormControl').invalid">
+
+
+        <mat-error *ngIf="contactNumberFormControl.hasError('required')">
+          contact number <strong>required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="contactNumberFormControl.hasError('maxLength')">
+          Maximum 14 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput type="number" placeholder="Fax" formControlName="faxFormControl" [formControl]="faxFormControl">
+
+      <mat-error *ngIf="addressForm.get('faxFormControl').touched && addressForm.get('faxFormControl').invalid">
+
+        <mat-error *ngIf="faxFormControl.hasError('required')">
+          Last Name is <strong>required</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Address" formControlName="addressFormControl" [formControl]="addressFormControl">
+
+      <mat-error *ngIf="addressForm.get('addressFormControl').touched && addressForm.get('addressFormControl').invalid">
+
+
+        <mat-error *ngIf="addressFormControl.hasError('required')">
+          Address is <strong>required</strong>
+        </mat-error>
+
+
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput type="number" placeholder="Zip Code" formControlName="zipCodeFormControl" [formControl]="zipCodeFormControl">
+
+      <mat-error *ngIf="addressForm.get('zipCodeFormControl').touched && addressForm.get('zipCodeFormControl').invalid">
+
+
+        <mat-error *ngIf="zipCodeFormControl.hasError('required')">
+          Zip Code <strong>required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="zipCodeFormControl.hasError('maxLength')">
+          Maximum 6 charcters required
+        </mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput placeholder="City" formControlName="cityFormControl" [formControl]="cityFormControl">
+
+      <mat-error *ngIf="addressForm.get('cityFormControl').touched && addressForm.get('cityFormControl').invalid">
+
+        <mat-error *ngIf="cityFormControl.hasError('required')">
+          Enter Your <strong>City</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput placeholder="State" formControlName="stateFormControl" [formControl]="stateFormControl">
+
+      <mat-error *ngIf="addressForm.get('stateFormControl').touched && addressForm.get('stateFormControl').invalid">
+
+        <mat-error *ngIf="stateFormControl.hasError('required')">
+          Enter Your <strong>State</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput placeholder="Country" formControlName="countryFormControl" [formControl]="countryFormControl">
+
+      <mat-error *ngIf="addressForm.get('countryFormControl').touched && addressForm.get('countryFormControl').invalid">
+
+        <mat-error *ngIf="countryFormControl.hasError('required')">
+          Enter Your <strong>Country</strong>
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+   <div class="form-group">
+    <!-- <a routerLink="./employerProfessional"><button type="submit" [disabled]="addressForm.invalid">></button></a> -->
+    <button  routerLink="./employerProfessional" mat-fab color="primary" [disabled]="addressForm.invalid"><i class="material-icons">keyboard_arrow_right</i></button>
+  </div>
+
+  
+</form>
+ <div class="text-center">
+    <img src="./assets/image/employer.png" class="img-responsive">
+  </div>
+

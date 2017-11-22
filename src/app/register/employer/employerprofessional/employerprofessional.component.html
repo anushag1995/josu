@@ -1,0 +1,91 @@
+<div class="section text-center">
+
+  <h1>Professional Details</h1>
+  <h4>Create your account in easy steps with less<br>information.</h4>
+
+</div>
+
+
+<form class="example-form" [formGroup]="professionalForm" name="professionalForm" (ngSubmit)="onSubmit(professionalForm)">
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width">
+      <input matInput placeholder="Position" formControlName="positionFormControl" [formControl]="positionFormControl">
+
+      <mat-error *ngIf="professionalForm.get('positionFormControl').touched && professionalForm.get('positionFormControl').invalid">
+
+        <mat-error *ngIf="positionFormControl.hasError('required')">
+          Enter Your <strong>position</strong> In The Company
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-half-width" style="margin-left:23px">
+      <input matInput placeholder="Industry Belongs To" formControlName="industryBelongsToFormControl" [formControl]="industryBelongsToFormControl">
+
+      <mat-error *ngIf="professionalForm.get('industryBelongsToFormControl').touched && professionalForm.get('industryBelongsToFormControl').invalid">
+
+        <mat-error *ngIf="industryBelongsToFormControl.hasError('required')">
+          Enter Your <strong>Industry Belongs To</strong> 
+        </mat-error>
+
+      </mat-error>
+
+    </mat-form-field>
+  </div>
+
+
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Company Name" formControlName="companyNameFormControl" [formControl]="companyNameFormControl">
+
+      <mat-error *ngIf="professionalForm.get('companyNameFormControl').touched && professionalForm.get('companyNameFormControl').invalid">
+
+
+        <mat-error *ngIf="companyNameFormControl.hasError('required')">
+          Enter Your  <strong>Company Name</strong>
+        </mat-error>
+
+
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="form-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Company Website" formControlName="companyWebsiteFormControl" [formControl]="companyWebsiteFormControl">
+
+      <mat-error *ngIf="professionalForm.get('companyWebsiteFormControl').touched && professionalForm.get('companyWebsiteFormControl').invalid">
+
+
+        <mat-error *ngIf="companyWebsiteFormControl.hasError('required')">
+         Company Website  <strong>required</strong>
+        </mat-error>
+
+
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+ <div class="form-group">
+    <button routerLink="./dashboard" mat-button type="submit"  class="btn btn-lg btn-primary btn-block btn-signin" [disabled]="professionalForm.invalid" routerLink="./dashboard">Register</button>
+  </div>
+
+</form>
+ <div class="text-center">
+    <img src="./assets/image/employer.png" class="img-responsive">
+  </div>
